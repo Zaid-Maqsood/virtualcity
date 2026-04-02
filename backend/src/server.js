@@ -1,4 +1,13 @@
 require('dotenv').config();
+
+// Append schema to DATABASE_URL if not already present
+// (DigitalOcean auto-binds DATABASE_URL without schema param)
+if (process.env.DATABASE_URL && !process.env.DATABASE_URL.includes('schema=')) {
+  const schema = process.env.DB_SCHEMA || 'vcschool';
+  const separator = process.env.DATABASE_URL.includes('?') ? '&' : '?';
+  process.env.DATABASE_URL += `${separator}schema=${schema}`;
+}
+
 const express = require('express');
 const cors = require('cors');
 const { PrismaClient } = require('@prisma/client');
