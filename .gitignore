@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# Build output
+dist/
+build/
+
+# Prisma generated
+backend/prisma/dev.db
+backend/prisma/dev.db-journal
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Claude / Playwright MCP internal
+.claude/
+.playwright-mcp/
+
+# Text/doc files
+*.txt
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+
+# AI starter / misc
+ai starter/
